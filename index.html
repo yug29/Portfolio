@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yug's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Libertinus+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: rgb(2, 2, 51);
+            color: whitesmoke;
+            font-family: 'Libertinus Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgb(21, 21, 77);
+        }
+
+        nav .left {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 1rem;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .FirstSection {
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .leftsection {
+            font-size: 2rem;
+        }
+
+        .rightsection {
+            background-color: rgb(21, 21, 77);
+            border-radius: 60% 40% 30% 70% / 50% 50% 60% 40%;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .rightsection img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #element {
+            display: inline-block;
+            /* Keeps animation inline */
+            min-width: 200px;
+            /* Reserves space so layout doesn’t jump */
+            color: rgb(233, 168, 48);
+            /* Highlight color */
+        }
+
+        /* About */
+        #About {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .about-heading {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-left img {
+            max-width: 250px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .about-right {
+            max-width: 600px;
+            font-size: 1rem;
+        }
+
+        .about-right p {
+            font-size: 18px;
+        }
+
+        /* Projects */
+        #Projects {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .project-heading {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .project-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgb(21, 21, 77);
+            border-radius: 6px;
+            padding: 20px;
+            width: 100%;
+            max-width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease;
+        }
+
+        .project-card p {
+            margin-bottom: 8px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-view-all {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgb(233, 168, 48);
+            color: rgb(233, 168, 48);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: rgb(233, 168, 48);
+            color: black;
+        }
+
+        /* Skills */
+        #Skills {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        #Skills h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list span {
+            background: rgb(21, 21, 77);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        #Contact {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        #Contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 20px;
+            color: white;
+        }
+
+        .contact-info a {
+            color: rgb(233, 168, 48);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Social Links */
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 8px;
+            padding: 8px 14px;
+            background: rgb(2, 2, 51);
+            border-radius: 6px;
+            color: rgb(233, 168, 48);
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: rgb(233, 168, 48);
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Back To Top */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-size: 18px;
+            padding: 10px 15px;
+            background-color: rgb(233, 168, 48);
+            color: black;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            transition: 0.3s;
+        }
+
+        /* Footer */
+        footer {
+            background: rgb(53, 53, 53);
+            color: whitesmoke;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .leftsection {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .leftsection {
+                font-size: 1.5rem;
+            }
+
+            .about-right {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .leftsection {
+                font-size: 1.2rem;
+            }
+
+            .rightsection {
+                width: 180px;
+                height: 180px;
+            }
+
+            .skills-list span {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="left">Yug's Portfolio</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="Yug_Mody_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+
+            <!-- <li><a href="https://drive.google.com/file/d/1zXC6kXp6FeSDZMw3JzpdGxSAuYJqVFB3/view?usp=sharing">Resume</a></li> -->
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="FirstSection">
+        <div class="leftsection">
+            Hi, I'm <b>Yug Mody</b><br>
+            <span>A Passionate </span><span id="element"></span>
+        </div>
+        <div class="rightsection">
+            <img src="Yug.jpg" alt="Profile">
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="About">
+        <h2 class="about-heading">About Me</h2>
+        <div class="about-content">
+            <div class="about-left">
+                <img src="dev.png" alt="About">
+            </div>
+            <div class="about-right">
+                <p>I am a passionate Full Stack Developer with a strong interest in Data Analyst. I enjoy building
+                    interactive web applications and working with data to extract meaningful insights...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="Projects">
+        <h2 class="project-heading">Projects</h2>
+        <div class="project-content">
+            <div class="project-card">
+                <h3>Code-Rush</h3>
+                <p>A web application that helps users learn coding concepts through interactive coding challenges.</p>
+                <a href="https://github.com/yug29/Code-Rush-guide" class="btn">View On GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Bite-Bazar</h3>
+                <p>An unified mobile platform that merges food ordering and e-commerce shopping into a single, seamless
+                    experience.</p>
+                <a href="https://github.com/yug29" class="btn">View On GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>SmartSelects</h3>
+                <p>A phone comparison website in an user friendly way.</p>
+                <a href="https://github.com/yug29/SmartSelects" class="btn">View On GitHub</a>
+            </div>
+        </div>
+        <div class="project-view-all">
+            <a href="https://github.com/yug29" class="btn">View all Projects</a>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="Skills">
+        <h2>My Skills</h2>
+        <div class="skill-category">
+            <h3>Front End</h3>
+            <div class="skills-list">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Back End</h3>
+            <div class="skills-list">
+                <span>Python</span><span>C/C++</span><span>Node JS</span><span>Express JS</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Data Science</h3>
+            <div class="skills-list">
+                <span>Pandas</span><span>NumPy</span><span>Power BI</span><span>SQL</span>
+            </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="Contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=yugmody@gmail.com"
+                    target="_blank">yugmody@gmail.com</a></p>
+            <p><strong>Phone:</strong><a href="tel:+919820942622">+91 9820942622</a></p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yug-mody-a12b55381" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yug29" target="_blank">GitHub</a>
+                <a href="https://X.com/yugmody" target="_blank"><i>X</i></a>
+                <a href="https://instagram.com/yug_m29" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a><a href="#About">About</a><a href="#Projects">Projects</a><a href="#Contact">Contact</a>
+        </div>
+        <p>Copyright © 2025 Yug's Portfolio | All rights reserved</p>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop"><b>↑</b></button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        // Typing animation
+        var typed = new Typed('#element', {
+            strings: ['<i>Web Developer</i>', '<i>Data Analyst</i>'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1000,
+            loop: true
+        });
+
+        // Back to Top
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = () => {
+            if (document.documentElement.scrollTop > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    </script>
+</body>
+
+</html>
